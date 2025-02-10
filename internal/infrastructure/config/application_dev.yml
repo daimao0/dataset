@@ -1,0 +1,5 @@
+database:
+    dsn: root:123456@tcp(localhost:3306)/dataset?charset=utf8mb4&parseTime=True&loc=Local
+    maxOpenConn: 100
+    maxIdleConn: 10
+    maxLifetime: 5
