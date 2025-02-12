@@ -5,7 +5,7 @@ import "dataset/internal/common/enum"
 // FileDataSource is a data source that reads data from a file.
 type FileDataSource struct {
 
-	// Path is the path to the file.
+	// Path is the path to the file.(oss or local file)
 	Path string
 
 	// FileType is the type of the file.
