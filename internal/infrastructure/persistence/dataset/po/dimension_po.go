@@ -1,8 +1,10 @@
 package po
 
-type DriverDimensionPO struct {
+import "dataset/internal/infrastructure/persistence/db"
+
+type DimensionPO struct {
 	// Model default columns
-	Model
+	db.Model
 
 	// Name of Dimension
 	Name string `gorm:"column:name;type:VARCHAR(255);not null"`
@@ -17,6 +19,6 @@ type DriverDimensionPO struct {
 	Description string `gorm:"column:description;type:VARCHAR(255);not null"`
 }
 
-func (*DriverDimensionPO) TableName() string {
-	return "t_driver_dimension"
+func (*DimensionPO) TableName() string {
+	return "t_dimension"
 }

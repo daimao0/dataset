@@ -58,7 +58,7 @@ func detectCharset(content []byte) *chardet.Result {
 	return result
 }
 
-// toSliceMap convert two-dimension array to slice map
+// toSliceMap convert two-dimension array to slice_util map
 func toSliceMap(records [][]string) []map[string]any {
 
 	//获得key

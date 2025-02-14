@@ -10,7 +10,9 @@ import (
 // RegisterRoutes register all routes
 func RegisterRoutes(engine *gin.Engine) {
 	// new controller
+	dataSourceController := controller.NewDataSourceController()
 	datasetController := controller.NewDatasetController()
+	physicalTableController := controller.NewPhysicalTableController()
 	// handle cors config
 	config := cors.Config{
 		AllowOrigins:     []string{"*"}, // 允许所有来源
@@ -25,6 +27,16 @@ func RegisterRoutes(engine *gin.Engine) {
 	group := engine.Group("/api/")
 	v1 := group.Group("/v1")
 	//datasource route group
+	datasourceGroup := v1.Group("/datasource")
+	{
+		datasourceGroup.POST("/mysql/create", dataSourceController.CreateMySQLDataSource)
+	}
+	//physical table route group
+	physicalTableGroup := v1.Group("/physical/table")
+	{
+		physicalTableGroup.POST("/create/file", physicalTableController.CreatePhysicalByFile)
+	}
+	//dataset route group
 	datasetGroup := v1.Group("/dataset")
 	{
 		datasetGroup.GET("/get/:id", datasetController.GetDataset)

@@ -1,7 +1,6 @@
 package model
 
 import (
-	"dataset/internal/domain/data_source/model"
 	"time"
 )
 
@@ -24,7 +23,4 @@ type Dataset struct {
 
 	// Fields of dataset contains measure、metric、dimension、derived dimension
 	Fields []Field
-
-	// DataSource uses the data source to read data
-	DataSource model.DataSource
 }

@@ -2,7 +2,6 @@ package db
 
 import (
 	"dataset/internal/infrastructure/config"
-	"dataset/internal/infrastructure/persistence/po"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"sync"
@@ -19,13 +18,14 @@ var (
 
 // InitializeDB initializes the db instance, which is used to connect to the database,create tables, etc.
 func InitializeDB() {
-	db := GetDB()
+	//db := GetDB()
 	// create table if not exists
-	_ = db.AutoMigrate(&po.DatasetPO{})
-	_ = db.AutoMigrate(&po.MeasurePO{})
-	_ = db.AutoMigrate(&po.MetricPO{})
-	_ = db.AutoMigrate(&po.DimensionPO{})
-	_ = db.AutoMigrate(&po.DriverDimensionPO{})
+	//_ = db.AutoMigrate(&po.DatasetPO{})
+	//_ = db.AutoMigrate(&po.MetricPO{})
+	//_ = db.AutoMigrate(&po.DimensionPO{})
+	//_ = db.AutoMigrate(&po.DataSourcePO{})
+	//_ = db.AutoMigrate(&po.DataSourceFilePO{})
+	//_ = db.AutoMigrate(&po.DataSourceMySQLPO{})
 }
 
 func GetDB() *gorm.DB {

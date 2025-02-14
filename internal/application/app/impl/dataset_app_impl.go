@@ -2,11 +2,11 @@ package impl
 
 import (
 	"dataset/internal/application/cmd"
+	"dataset/internal/application/convert"
 	"dataset/internal/application/dto"
 	"dataset/internal/domain/dataset/args"
 	"dataset/internal/domain/dataset/service"
 	"dataset/internal/domain/dataset/service/impl"
-	"dataset/internal/infrastructure/convert"
 )
 
 type DatasetAppImpl struct {

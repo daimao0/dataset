@@ -1,4 +1,4 @@
-package po
+package db
 
 import (
 	"gorm.io/gorm"

@@ -1,6 +1,8 @@
 package model
 
-import "dataset/internal/domain/data_source/model"
+import (
+	"dataset/internal/domain/datasource/model"
+)
 
 // VirtualTable is dataset item。you can read the README.md to get more information
 type VirtualTable struct {
@@ -16,7 +18,7 @@ type VirtualTable struct {
 	// UpdatedAt is the updated time of the virtual table
 	UpdatedAt int64
 	// Fields is the fields of the virtual table
-	Fields []Field
+	//Fields []model.Field
 	// DataSources is the data sources of the virtual table.
 	// You can read the README.md to get more information
 	DataSources []model.DataSource

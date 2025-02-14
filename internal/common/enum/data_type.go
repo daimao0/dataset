@@ -1,6 +1,7 @@
 package enum
 
 import (
+	"dataset/internal/common/easytool/util/str_util"
 	"strconv"
 	"time"
 )
@@ -57,6 +58,9 @@ func ParseToDataType(obj any) DataType {
 func parseStringToDataType(val string) DataType {
 	if _, err := strconv.ParseFloat(val, 64); err == nil {
 		return Number
+	}
+	if _, err := str_util.ParseDatetime(val); err == nil {
+		return DateTime
 	}
 	return String
 }
