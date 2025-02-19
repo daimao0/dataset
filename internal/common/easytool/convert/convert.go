@@ -11,6 +11,34 @@ func ToStr(a any) string {
 	return fmt.Sprintf("%v", a)
 }
 
+// ToInt convert any to int64
+func ToInt(a any) int {
+	switch v := a.(type) {
+	case int:
+		return v
+	case int8:
+		return int(v)
+	case int16:
+		return int(v)
+	case int32:
+		return int(v)
+	case int64:
+		return int(v)
+	case float32:
+		return int(v)
+	case float64:
+		return int(v)
+	case string:
+		num, err := strconv.ParseInt(v, 10, 64)
+		if err == nil {
+			return int(num)
+		}
+	default:
+		return 0
+	}
+	return 0
+}
+
 // ToInt64 convert any to int64
 func ToInt64(a any) int64 {
 	switch v := a.(type) {

@@ -3,7 +3,7 @@ package main
 import (
 	"dataset/internal/adapter/http"
 	"dataset/internal/infrastructure/config"
-	"dataset/internal/infrastructure/persistence/db"
+	"dataset/internal/infrastructure/persistence/dataset_db"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
@@ -14,8 +14,8 @@ import (
 func init() {
 	// Load app config by env
 	loadConfig()
-	// init db
-	db.InitializeDB()
+	// init dataset_db
+	dataset_db.InitializeDB()
 }
 
 func main() {

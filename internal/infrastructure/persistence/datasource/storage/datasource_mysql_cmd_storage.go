@@ -2,7 +2,8 @@ package storage
 
 import (
 	"dataset/internal/domain/datasource/model"
-	"dataset/internal/infrastructure/persistence/db"
+	"dataset/internal/infrastructure/convert"
+	"dataset/internal/infrastructure/persistence/dataset_db"
 )
 
 type DataSourceMySQLCmdStorage struct {
@@ -14,9 +15,14 @@ func NewDataSourceMySQLCmdStorage() *DataSourceMySQLCmdStorage {
 
 // Create  data source
 func (d *DataSourceMySQLCmdStorage) Create(dataSource model.DataSource) error {
-	db := db.GetDB()
+	dataSourceMySQL := dataSource.(*model.DataSourceMySQL)
+	dataSourcePO := convert.DataSourceMySQLToDataSourcePO(dataSourceMySQL)
+	dataSourceMySQLPO := convert.DataSourceMySQLToDataSourcePO(dataSourceMySQL)
+	db := dataset_db.GetDB()
 	tx := db.Begin()
-	tx.Create()
+	tx.Create(dataSourcePO)
+	tx.Create(dataSourceMySQLPO)
+	tx.Commit()
 	return nil
 }
 

@@ -1,6 +1,9 @@
 package model
 
-import "dataset/internal/common/enum"
+import (
+	"dataset/internal/common/enum"
+	"time"
+)
 
 // DataSource domain
 type DataSource interface {
@@ -19,4 +22,10 @@ type BaseDataSource struct {
 
 	// Description is the description of the data source,It is created by the user
 	Description string
+
+	// CreateAt is the created time of the data source
+	CreateAt time.Time
+
+	// UpdateAt is the update time of the data source
+	UpdateAt time.Time
 }

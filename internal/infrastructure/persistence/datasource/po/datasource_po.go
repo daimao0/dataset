@@ -1,13 +1,13 @@
 package po
 
 import (
-	"dataset/internal/infrastructure/persistence/db"
+	"dataset/internal/infrastructure/persistence/dataset_db"
 )
 
 // DataSourcePO the t
 type DataSourcePO struct {
 	// Model base field
-	db.Model
+	dataset_db.Model
 
 	// Description  to describe the data source
 	Description string `gorm:"column:description;type:VARCHAR(255);not null"`

@@ -1,10 +1,10 @@
 package po
 
-import "dataset/internal/infrastructure/persistence/db"
+import "dataset/internal/infrastructure/persistence/dataset_db"
 
 type DatasetPO struct {
 	// Model default columns
-	db.Model
+	dataset_db.Model
 
 	// Name of dataset
 	Name string `gorm:"column:name;type:VARCHAR(255);not null;unique"`

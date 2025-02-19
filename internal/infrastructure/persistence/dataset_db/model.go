@@ -1,4 +1,4 @@
-package db
+package dataset_db
 
 import (
 	"gorm.io/gorm"
@@ -8,7 +8,7 @@ import (
 // Model the table default columns
 type Model struct {
 	// ID the unique id
-	ID uint64 `gorm:"column:id;primaryKey;type:BIGINT(20) UNSIGNED;"`
+	ID int64 `gorm:"column:id;primaryKey;type:BIGINT(20) UNSIGNED;"`
 
 	// CreatedAt the create time
 	CreatedAt time.Time `gorm:"column:created_at;type:DATETIME;not null;autoUpdateTime;index:idx_created_at"`

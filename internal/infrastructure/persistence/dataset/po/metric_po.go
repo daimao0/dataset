@@ -1,10 +1,10 @@
 package po
 
-import "dataset/internal/infrastructure/persistence/db"
+import "dataset/internal/infrastructure/persistence/dataset_db"
 
 type MetricPO struct {
 	// Model default columns
-	db.Model
+	dataset_db.Model
 
 	// Name of Dimension
 	Name string `gorm:"column:name;type:VARCHAR(255);not null"`

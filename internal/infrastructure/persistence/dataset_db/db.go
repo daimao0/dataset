@@ -1,4 +1,4 @@
-package db
+package dataset_db
 
 import (
 	"dataset/internal/infrastructure/config"
@@ -9,23 +9,23 @@ import (
 )
 
 var (
-	// dbInstance is global db instance
+	// dbInstance is global dataset_db instance
 	dbInstance *gorm.DB
 
-	// once is used to ensure that the db instance is initialized only once
+	// once is used to ensure that the dataset_db instance is initialized only once
 	once sync.Once
 )
 
-// InitializeDB initializes the db instance, which is used to connect to the database,create tables, etc.
+// InitializeDB initializes the dataset_db instance, which is used to connect to the database,create tables, etc.
 func InitializeDB() {
-	//db := GetDB()
+	//dataset_db := GetDB()
 	// create table if not exists
-	//_ = db.AutoMigrate(&po.DatasetPO{})
-	//_ = db.AutoMigrate(&po.MetricPO{})
-	//_ = db.AutoMigrate(&po.DimensionPO{})
-	//_ = db.AutoMigrate(&po.DataSourcePO{})
-	//_ = db.AutoMigrate(&po.DataSourceFilePO{})
-	//_ = db.AutoMigrate(&po.DataSourceMySQLPO{})
+	//_ = dataset_db.AutoMigrate(&po.DatasetPO{})
+	//_ = dataset_db.AutoMigrate(&po.MetricPO{})
+	//_ = dataset_db.AutoMigrate(&po.DimensionPO{})
+	//_ = dataset_db.AutoMigrate(&po.DataSourcePO{})
+	//_ = dataset_db.AutoMigrate(&po.DataSourceFilePO{})
+	//_ = dataset_db.AutoMigrate(&po.DataSourceMySQLPO{})
 }
 
 func GetDB() *gorm.DB {
